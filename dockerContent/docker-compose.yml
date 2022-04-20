@@ -1,0 +1,13 @@
+version: "2.4"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: edureka-docker
+    restart: unless-stopped
+    working_dir: /usr/local/apache2/htdocs/
+    volumes:
+      - ./Case-study-app/:/usr/local/apache2/htdocs/
+    ports:
+      - "2222:80"
